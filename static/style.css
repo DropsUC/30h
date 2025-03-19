@@ -1,0 +1,84 @@
+/* Style global */
+body {
+  font-family: Arial, sans-serif;
+  background-size: 90%; /* Réduit la taille de l'image */
+  background-position: center; /* Centre l'image */
+  background-attachment: fixed; /* L'image reste fixe lors du scroll */
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Prend toute la hauteur de la page */
+  display: flex;
+  flex-direction: column;
+  color: rgb(10, 9, 9); /* Texte blanc pour plus de contraste */
+  min-height: 100vh; /* Garantir la hauteur de la fenêtre même avec du contenu plus court */
+}
+
+/* Bandeau de navigation */
+header {
+  background-color: #b9afd7; /* Fond avec couleur pastel */
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  z-index: 1; /* Pour s'assurer que le header est au-dessus de l'image */
+  position: relative;
+}
+
+header nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+header nav ul li {
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+header nav ul li a:hover {
+  background-color: #7d8d8b; /* Fond du lien au survol */
+}
+
+/* Main content */
+main {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 50px; /* Ajoute de l'espace sous le contenu principal pour ne pas être caché par le footer */
+}
+
+main h2 {
+  font-size: 2em;
+  color: #c2e1d6; /* Couleur pour le titre */
+}
+
+main a {
+  color: white;
+  text-decoration: none;
+  background-color: #a53d3d;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+main a:hover {
+  background-color: #7d8d8b; /* Fond du bouton au survol */
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background-color: #efd9e6; /* Fond pastel clair */
+  color: white;
+  padding: 0.5px; /* Ajuste la hauteur du footer */
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}

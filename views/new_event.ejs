@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Événements BDE</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Événements à venir</h1>
+    </header>
+    <main>
+        <ul>
+            <% events.forEach(event => { %>
+                <li>
+                    <h3><%= event.title %></h3>
+                    <p><%= event.date %></p>
+                    <p><%= event.description %></p>
+                </li>
+            <% }) %>
+        </ul>
+        <a href="/events/new">Ajouter un nouvel événement</a>
+    </main>
+</body>
+</html>

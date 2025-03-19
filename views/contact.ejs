@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - BDE Paris Ynov Campus</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <!-- Bandeau avec les onglets -->
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/events">Événements</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/boutique">Boutique</a></li>
+          <li><a href="/le bde">Club</a></li>
+          <li><a href="/association">Association</a></li>
+          <li><a href="/annonce">Annonce</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Contenu principal -->
+    <main>
+      <section class="intro">
+        <h2>Contactez-nous</h2>
+        <p>
+          Vous pouvez contacter les membres de notre équipe pour toute question
+          ou suggestion.
+        </p>
+      </section>
+
+      <!-- Informations sur les membres de l'équipe -->
+      <section class="team">
+        <h3>Nos Membres</h3>
+        <% members.forEach(member => { %>
+        <div class="team-member">
+          <h4><%= member.name %></h4>
+          <% if (member.age) { %>
+          <p><strong>Âge :</strong> <%= member.age %> ans</p>
+          <% } %> <% if (member.favoritePhrase) { %>
+          <p><strong>Phrase préférée :</strong> <%= member.favoritePhrase %></p>
+          <% } %> <% if (member.favoriteDrink) { %>
+          <p><strong>Alcool préféré :</strong> <%= member.favoriteDrink %></p>
+          <% } %> <% if (member.favoriteMusic) { %>
+          <p><strong>Musique préférée :</strong> <%= member.favoriteMusic %></p>
+          <% } %> <% if (member.passion) { %>
+          <p><strong>Passion :</strong> <%= member.passion %></p>
+          <% } %> <% if (member.email) { %>
+          <p><strong>Email :</strong> <%= member.email %></p>
+          <% } %>
+        </div>
+        <% }) %>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        Contactez-nous par email : bdepyc92@gmail.com | Instagram :
+        <a href="https://www.instagram.com/ynovparisbde" target="_blank"
+          >@ynovparisbde</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>

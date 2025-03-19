@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boutique - BDE Paris Ynov Campus</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/events">Événements</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/boutique">Boutique</a></li>
+          <li><a href="/le bde">Club</a></li>
+          <li><a href="/association">Association</a></li>
+          <li><a href="/annonce">Annonce</a></li>
+        </ul>
+      </nav>
+      <h1>BDE Paris Ynov Campus</h1>
+    </header>
+
+    <main>
+      <h2>Bienvenue dans notre boutique !</h2>
+
+      <section class="products">
+        <% products.forEach(product => { %>
+        <div class="product">
+          <img src="<%= product.imageUrl %>" alt="<%= product.name %>" />
+          <h3><%= product.name %></h3>
+          <p><%= product.description %></p>
+          <p><strong>Prix :</strong> <%= product.price %> €</p>
+          <button>Ajouter au panier</button>
+        </div>
+        <% }); %>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 BDE Paris Ynov Campus. Tous droits réservés.</p>
+    </footer>
+  </body>
+</html>
