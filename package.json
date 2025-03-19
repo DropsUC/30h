@@ -1,0 +1,23 @@
+{
+  "name": "48h",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DropsUC/30h.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DropsUC/30h/issues"
+  },
+  "homepage": "https://github.com/DropsUC/30h#readme",
+  "dependencies": {
+    "sqlite3": "^5.1.7"
+  }
+}
