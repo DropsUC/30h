@@ -15,6 +15,43 @@ const db = new sqlite3.Database('./bde.db', (err) => {
     if (err) console.error(err.message);
     else console.log('Connecté à la base SQLite');
 });
+const members = [
+    {
+      name: 'Loïc - Pôle Création',
+      email: 'loic.bsl@example.com',
+      passion: 'Son strabisme',
+      photo: 'loic.png'
+    },
+    {
+      name: 'Adèle',
+      email: 'adele@example.com',
+      passion: 'Inavouable, boire encore des biberons',
+      photo: 'adele.png'
+    },
+    {
+      name: 'Dounia - Présidente',
+      email: 'dounia@example.com',
+      passion: 'Inavouable, mon mec',
+      photo: 'dounia.png'
+    },
+    {
+      name: 'Paul - Trésorier',
+      email: 'paul@example.com',
+      passion: 'Gérer l\'argent',
+      photo: 'paul.png'
+    },
+    {
+      name: 'Coline - Pôle Event',
+      email: 'coline@example.com',
+      passion: 'Organiser des événements',
+      photo: 'coline.png'
+    }
+  ];
+  
+  // Route pour la page de contact
+  app.get('/contact', (req, res) => {
+    res.render('contact', { members: members });
+  });
 
 // Création des tables (si elles n'existent pas)
 db.serialize(() => {
