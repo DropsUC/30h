@@ -1,6 +1,6 @@
 /* Style global */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Mansalva", cursive;
   background-color: #7d8d8b; /* Applique la couleur de fond */
   background-size: 90%; /* Réduit la taille de l'image */
   background-position: center; /* Centre l'image */
@@ -25,10 +25,27 @@ ul {
 header {
   background-color: #b9afd7; /* Fond avec couleur pastel */
   color: white;
-  padding: 10px 0;
+  padding: 10px 20px; /* Ajout d'espace à gauche et à droite */
+  height: 160px; /* Hauteur réduite du bandeau */
   text-align: center;
   z-index: 1; /* Pour s'assurer que le header est au-dessus de l'image */
-  position: relative;
+  position: relative; /* Nécessaire pour les positionnements absolus */
+}
+
+header .logo-vert {
+  width: 12%; /* Ajuste la taille du logo vert */
+  position: absolute; /* Positionnement absolu */
+  left: 10px; /* Place le logo vert complètement à gauche */
+  top: 50%; /* Centre verticalement */
+  transform: translateY(-50%); /* Ajuste le centrage vertical */
+}
+
+header .logo-noir {
+  width: 12%; /* Ajuste la taille du logo noir */
+  position: absolute; /* Positionnement absolu */
+  right: 10px; /* Placer le logo noir à droite */
+  top: 50%; /* Centre verticalement */
+  transform: translateY(-50%); /* Ajuste le centrage vertical */
 }
 
 header nav ul {
@@ -73,6 +90,7 @@ footer {
   width: 100%;
   bottom: 0;
 }
+
 .team {
   display: flex;
   flex-wrap: wrap;
