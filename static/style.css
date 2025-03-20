@@ -14,6 +14,16 @@ body {
   min-height: 100vh; /* Garantir la hauteur de la fenêtre même avec du contenu plus court */
 }
 
+/* Appliquer Montelin aux titres */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montelin", sans-serif; /* Applique la police Montelin à tous les titres */
+}
+
 /* Suppression des puces des listes */
 ul {
   list-style: none; /* Retire les puces */
@@ -80,6 +90,7 @@ main {
   background-color: #7d8d8b; /* Applique la couleur de fond spécifique ici */
 }
 
+/* Footer */
 footer {
   text-align: center;
   background-color: #efd9e6; /* Fond pastel clair */
@@ -89,6 +100,7 @@ footer {
   width: 100%;
 }
 
+/* Team Section */
 .team {
   display: flex;
   flex-wrap: wrap;
