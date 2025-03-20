@@ -26,7 +26,7 @@ header {
   background-color: #b9afd7; /* Fond avec couleur pastel */
   color: white;
   padding: 10px 20px; /* Ajout d'espace à gauche et à droite */
-  height: 160px; /* Hauteur réduite du bandeau */
+  height: 140px; /* Hauteur réduite du bandeau */
   text-align: center;
   z-index: 1; /* Pour s'assurer que le header est au-dessus de l'image */
   position: relative; /* Nécessaire pour les positionnements absolus */
@@ -80,15 +80,13 @@ main {
   background-color: #7d8d8b; /* Applique la couleur de fond spécifique ici */
 }
 
-/* Footer */
 footer {
   text-align: center;
   background-color: #efd9e6; /* Fond pastel clair */
   color: white;
   padding: 0.5px; /* Ajuste la hauteur du footer */
-  position: fixed;
+  position: relative; /* Retirer la position fixed */
   width: 100%;
-  bottom: 0;
 }
 
 .team {
