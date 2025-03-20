@@ -1,6 +1,7 @@
 /* Style global */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Mansalva", cursive;
+  background-color: #7d8d8b; /* Applique la couleur de fond */
   background-size: 90%; /* Réduit la taille de l'image */
   background-position: center; /* Centre l'image */
   background-attachment: fixed; /* L'image reste fixe lors du scroll */
@@ -13,14 +14,38 @@ body {
   min-height: 100vh; /* Garantir la hauteur de la fenêtre même avec du contenu plus court */
 }
 
+/* Suppression des puces des listes */
+ul {
+  list-style: none; /* Retire les puces */
+  padding: 0; /* Supprime les espaces internes */
+  margin: 0; /* Supprime les marges externes */
+}
+
 /* Bandeau de navigation */
 header {
   background-color: #b9afd7; /* Fond avec couleur pastel */
   color: white;
-  padding: 10px 0;
+  padding: 10px 20px; /* Ajout d'espace à gauche et à droite */
+  height: 160px; /* Hauteur réduite du bandeau */
   text-align: center;
   z-index: 1; /* Pour s'assurer que le header est au-dessus de l'image */
-  position: relative;
+  position: relative; /* Nécessaire pour les positionnements absolus */
+}
+
+header .logo-vert {
+  width: 12%; /* Ajuste la taille du logo vert */
+  position: absolute; /* Positionnement absolu */
+  left: 10px; /* Place le logo vert complètement à gauche */
+  top: 50%; /* Centre verticalement */
+  transform: translateY(-50%); /* Ajuste le centrage vertical */
+}
+
+header .logo-noir {
+  width: 12%; /* Ajuste la taille du logo noir */
+  position: absolute; /* Positionnement absolu */
+  right: 10px; /* Placer le logo noir à droite */
+  top: 50%; /* Centre verticalement */
+  transform: translateY(-50%); /* Ajuste le centrage vertical */
 }
 
 header nav ul {
@@ -52,24 +77,7 @@ main {
   text-align: center;
   margin-top: 40px;
   margin-bottom: 50px; /* Ajoute de l'espace sous le contenu principal pour ne pas être caché par le footer */
-}
-
-main h2 {
-  font-size: 2em;
-  color: #c2e1d6; /* Couleur pour le titre */
-}
-
-main a {
-  color: white;
-  text-decoration: none;
-  background-color: #a53d3d;
-  padding: 10px 20px;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-main a:hover {
-  background-color: #7d8d8b; /* Fond du bouton au survol */
+  background-color: #7d8d8b; /* Applique la couleur de fond spécifique ici */
 }
 
 /* Footer */
@@ -83,4 +91,25 @@ footer {
   bottom: 0;
 }
 
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
 
+.team-member {
+  text-align: center;
+  width: 200px; /* Taille uniforme pour chaque bloc */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #f9f9f9;
+}
+
+.team-member-photo {
+  width: 150px; /* Taille réduite */
+  height: 150px; /* Taille réduite */
+  object-fit: cover; /* Pour éviter la déformation */
+  border-radius: 50%; /* Cercle pour un meilleur style */
+}
