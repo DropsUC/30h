@@ -29,6 +29,7 @@ const members = [
     {
         name: 'Loïc - Pôle Création',
         age: 20,
+        photo: 'loic.png',  // Ajout du champ photo
         favoritePhrase: 'J\'ai rien compris',
         favoriteDrink: 'La bière',
         favoriteMusic: 'Matuidi charo',
@@ -37,6 +38,7 @@ const members = [
     },
     {
         name: 'Adèle',
+        photo: 'adele.png',  // Ajout du champ photo
         age: 21,
         favoritePhrase: 'Bientôt j\'arrête de fumer',
         passion: 'Inavouable, boire encore des biberons'
@@ -44,17 +46,26 @@ const members = [
     {
         name: 'Dounia - Présidente',
         age: 22,
+        photo: 'Dounia.png',  // Ajout du champ photo
         favoritePhrase: 'La Marseillaise du 77',
         passion: 'Inavouable, mon mec'
     },
     {
         name: 'Paul - Trésorier',
+        photo: 'paul.png',  // Ajout du champ photo
         favoritePhrase: 'Putain Lolo, il a encore vomi'
     },
     {
         name: 'Coline - Pôle Event',
         age: 20,
+        photo: 'coline.png',  // Ajout du champ photo
         favoritePhrase: 'Si je rigole, c\'est pas parce que t\'es drôle, mais parce que j\'ai rien compris'
+    },
+    {
+        name: 'Nathan - vice pre',
+        age: 18,
+        photo: 'nathan.png',  // Ajout du champ photo
+        favoritePhrase: 'J ai jamais le bon timing avec les femmes'
     }
 ];
 
