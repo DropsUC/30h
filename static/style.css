@@ -33,7 +33,7 @@ header {
 }
 
 header .logo-vert {
-  width: 12%; /* Ajuste la taille du logo vert */
+  width: 8%; /* Ajuste la taille du logo vert */
   position: absolute; /* Positionnement absolu */
   left: 10px; /* Place le logo vert complètement à gauche */
   top: 50%; /* Centre verticalement */
@@ -41,7 +41,7 @@ header .logo-vert {
 }
 
 header .logo-noir {
-  width: 12%; /* Ajuste la taille du logo noir */
+  width: 8%; /* Ajuste la taille du logo noir */
   position: absolute; /* Positionnement absolu */
   right: 10px; /* Placer le logo noir à droite */
   top: 50%; /* Centre verticalement */
@@ -110,4 +110,100 @@ footer {
   height: 150px; /* Taille réduite */
   object-fit: cover; /* Pour éviter la déformation */
   border-radius: 50%; /* Cercle pour un meilleur style */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+form label {
+  margin: 10px 0 5px;
+}
+
+form input {
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: #7d8d8b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #5a6a6a;
+}
+
+.centered-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Espace entre les images */
+  padding: 20px;
+}
+
+.centered-images img {
+  width: 150px; /* Ajustez cette valeur pour réduire la taille des images */
+  height: auto;
+  border-radius: 10px;
+  cursor: pointer; /* Indique que les images sont cliquables */
+}
+
+.overlay {
+  display: none; /* Masqué par défaut */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.overlay-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+.slider {
+  display: flex;
+  justify-content: center; /* Centre les images horizontalement */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px; /* Espace entre les images */
+  padding: 20px;
+}
+
+.slide {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: center; /* Centre les images à l'intérieur de chaque slide */
+}
+
+.slide img {
+  width: 700px; /* Ajustez cette valeur pour agrandir les images */
+  height: auto;
+  border-radius: 10px;
 }

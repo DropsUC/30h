@@ -27,13 +27,19 @@
 
     <!-- Contenu principal -->
     <main>
-      <section class="intro">
-        <h2>Bienvenue sur le site du BDE Paris Ynov Campus !</h2>
-        <p>
-          Restez informé des derniers événements et annonces de votre campus.
-        </p>
+      <!-- Images centrées -->
+      <section class="centered-images">
+        <img src="image1.png" alt="Image 1" class="clickable-image" data-overlay="overlay1.png">
+        <img src="image2.png" alt="Image 2" class="clickable-image" data-overlay="/static/overlay2.jpg">
       </section>
 
+      <!-- Overlay -->
+      <div id="image-overlay" class="overlay">
+        <span class="close-btn">&times;</span>
+        <img class="overlay-content" id="overlay-image">
+      </div>
+
+      <!-- Autres sections -->
       <section class="features">
         <h3>Nos Services</h3>
         <ul>
@@ -44,33 +50,33 @@
           <li><a href="/association">Participez à notre association</a></li>
           <li><a href="/annonce">Voir les annonces</a></li>
         </ul>
-        <section class="events">
-          <h3>Événements à venir</h3>
-          <ul>
-            <li>
-              <h4>Soirée Karaoké</h4>
-              <p>Date: 25 mars 2025</p>
-              <p>Lieu: Salle 101</p>
-              <a href="#">Inscrivez-vous ici</a>
-            </li>
-            <li>
-              <h4>Compétition de jeux vidéo</h4>
-              <p>Date: 1er avril 2025</p>
-              <p>Lieu: Salle 202</p>
-              <a href="#">Inscrivez-vous ici</a>
-            </li>
-          </ul>
-        </section>
+      </section>
+      <section class="events">
+        <h3>Événements à venir</h3>
+        <ul>
+          <li>
+            <h4>Soirée Karaoké</h4>
+            <p>Date: 25 mars 2025</p>
+            <p>Lieu: Salle 101</p>
+            <a href="#">Inscrivez-vous ici</a>
+          </li>
+          <li>
+            <h4>Compétition de jeux vidéo</h4>
+            <p>Date: 1er avril 2025</p>
+            <p>Lieu: Salle 202</p>
+            <a href="#">Inscrivez-vous ici</a>
+          </li>
+        </ul>
       </section>
     </main>
 
     <footer>
       <p>
         Suivez-nous sur Instagram :
-        <a href="https://www.instagram.com/ynovparisbde/" target="_blank"
-          >@ynovparisbde</a
-        >
+        <a href="https://www.instagram.com/ynovparisbde/" target="_blank">@ynovparisbde</a>
       </p>
     </footer>
+
+    <script src="/script.js"></script>
   </body>
 </html>
