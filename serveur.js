@@ -2,6 +2,7 @@
 const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const bodyParser = require('body-parser');
+const session = require('express-session');
 const app = express();
 const PORT = 8080;
 
@@ -10,48 +11,57 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('static')); // Remplace 'public' par 'static'
 app.set('view engine', 'ejs');
 
+// Configuration des sessions
+app.use(session({
+    secret: 'ton_secret',
+    resave: false,
+    saveUninitialized: true
+}));
+
 // Connexion à la base de données SQLite
 const db = new sqlite3.Database('./bde.db', (err) => {
     if (err) console.error(err.message);
     else console.log('Connecté à la base SQLite');
 });
+
+// Tableau des membres
 const members = [
     {
-      name: 'Loïc - Pôle Création',
-      email: 'loic.bsl@example.com',
-      passion: 'Son strabisme',
-      photo: 'loic.png'
+        name: 'Loïc - Pôle Création',
+        age: 20,
+        photo: 'loic.png',  // Ajout du champ photo
+        favoritePhrase: 'J\'ai rien compris',
+        favoriteDrink: 'La bière',
+        favoriteMusic: 'Matuidi charo',
+        passion: 'Son strabisme',
+        email: 'loic.bsl@example.com'
     },
     {
-      name: 'Adèle',
-      email: 'adele@example.com',
-      passion: 'Inavouable, boire encore des biberons',
-      photo: 'adele.png'
+        name: 'Adèle',
+        photo: 'adele.png',  // Ajout du champ photo
+        age: 21,
+        favoritePhrase: 'Bientôt j\'arrête de fumer',
+        passion: 'Inavouable, boire encore des biberons'
     },
     {
-      name: 'Dounia - Présidente',
-      email: 'dounia@example.com',
-      passion: 'Inavouable, mon mec',
-      photo: 'dounia.png'
+        name: 'Dounia - Présidente',
+        age: 22,
+        photo: 'Dounia.png',  // Ajout du champ photo
+        favoritePhrase: 'La Marseillaise du 77',
+        passion: 'Inavouable, mon mec'
     },
     {
-      name: 'Paul - Trésorier',
-      email: 'paul@example.com',
-      passion: 'Gérer l\'argent',
-      photo: 'paul.png'
+        name: 'Paul - Trésorier',
+        photo: 'paul.png',  // Ajout du champ photo
+        favoritePhrase: 'Putain Lolo, il a encore vomi'
     },
     {
-      name: 'Coline - Pôle Event',
-      email: 'coline@example.com',
-      passion: 'Organiser des événements',
-      photo: 'coline.png'
+        name: 'Coline - Pôle Event',
+        age: 20,
+        photo: 'coline.png',  // Ajout du champ photo
+        favoritePhrase: 'Si je rigole, c\'est pas parce que t\'es drôle, mais parce que j\'ai rien compris'
     }
-  ];
-  
-  // Route pour la page de contact
-  app.get('/contact', (req, res) => {
-    res.render('contact', { members: members });
-  });
+];
 
 // Création des tables (si elles n'existent pas)
 db.serialize(() => {
@@ -73,9 +83,9 @@ db.serialize(() => {
 app.get('/', (req, res) => {
     res.render('index');
 });
+
 // Route pour la page boutique
 app.get('/boutique', (req, res) => {
-    // Tableau d'objets représentant les produits
     const products = [
         {
             name: 'T-shirt BDE',
@@ -97,7 +107,6 @@ app.get('/boutique', (req, res) => {
         }
     ];
 
-    // Envoi des produits à la vue boutique.ejs
     res.render('boutique', { products: products });
 });
 
@@ -126,42 +135,28 @@ app.post('/events', (req, res) => {
 
 // Route pour la page de contact
 app.get('/contact', (req, res) => {
-    // Tableau d'objets représentant les membres de l'équipe
-    const members = [
-        {
-            name: 'Loïc - Pôle Création',
-            age: 20,
-            favoritePhrase: 'J\'ai rien compris',
-            favoriteDrink: 'La bière',
-            favoriteMusic: 'Matuidi charo',
-            passion: 'Son strabisme',
-            email: 'loic.bsl@example.com'
-        },
-        {
-            name: 'Adèle',
-            age: 21,
-            favoritePhrase: 'Bientôt j\'arrête de fumer',
-            passion: 'Inavouable, boire encore des biberons'
-        },
-        {
-            name: 'Dounia - Présidente',
-            age: 22,
-            favoritePhrase: 'La Marseillaise du 77',
-            passion: 'Inavouable, mon mec'
-        },
-        {
-            name: 'Paul - Trésorier',
-            favoritePhrase: 'Putain Lolo, il a encore vomi'
-        },
-        {
-            name: 'Coline - Pôle Event',
-            age: 20,
-            favoritePhrase: 'Si je rigole, c\'est pas parce que t\'es drôle, mais parce que j\'ai rien compris'
-        }
-    ];
-    
-    // Envoi des membres à la vue contact.ejs
     res.render('contact', { members: members });
+});
+
+// Route pour la page de connexion
+app.get('/login', (req, res) => {
+    res.render('login');
+});
+
+// Route de connexion (simulée ici pour simplification)
+app.post('/login', (req, res) => {
+    const { username, password } = req.body;
+    // Ici, tu devrais vérifier les informations avec la base de données
+    req.session.user = { username: username, isAdmin: true }; // Exemple de connexion
+    res.redirect('/');
+});
+
+// Route de déconnexion
+app.get('/logout', (req, res) => {
+    req.session.destroy((err) => {
+        if (err) console.log(err);
+        res.redirect('/');
+    });
 });
 
 // Lancement du serveur
