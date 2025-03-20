@@ -26,4 +26,6 @@ https://moodle.learn.ynov.com/pluginfile.php/382540/mod_resource/content/0/BDE%2
 * Website: Ugo coste / Rodolphe fanneau de la horie / Wissam Dehmej
 * Github: [@DropsUC](https://github.com/DropsUC)
 
-## Show your support
+## Description 
+
+Le site à pour but de présenter le BDE et les différents évennements qu'il propose, after partie, soirée, activité, ...

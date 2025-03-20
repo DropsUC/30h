@@ -2,21 +2,56 @@
 const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const bodyParser = require('body-parser');
-const path = require('path');
 const app = express();
-const PORT = 3000;
+const PORT = 8080;
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'static')));
+app.use(express.static('static')); // Remplace 'public' par 'static'
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
 
 // Connexion à la base de données SQLite
 const db = new sqlite3.Database('./bde.db', (err) => {
     if (err) console.error(err.message);
     else console.log('Connecté à la base SQLite');
 });
+const members = [
+    {
+      name: 'Loïc - Pôle Création',
+      email: 'loic.bsl@example.com',
+      passion: 'Son strabisme',
+      photo: 'loic.png'
+    },
+    {
+      name: 'Adèle',
+      email: 'adele@example.com',
+      passion: 'Inavouable, boire encore des biberons',
+      photo: 'adele.png'
+    },
+    {
+      name: 'Dounia - Présidente',
+      email: 'dounia@example.com',
+      passion: 'Inavouable, mon mec',
+      photo: 'dounia.png'
+    },
+    {
+      name: 'Paul - Trésorier',
+      email: 'paul@example.com',
+      passion: 'Gérer l\'argent',
+      photo: 'paul.png'
+    },
+    {
+      name: 'Coline - Pôle Event',
+      email: 'coline@example.com',
+      passion: 'Organiser des événements',
+      photo: 'coline.png'
+    }
+  ];
+  
+  // Route pour la page de contact
+  app.get('/contact', (req, res) => {
+    res.render('contact', { members: members });
+  });
 
 // Création des tables (si elles n'existent pas)
 db.serialize(() => {
@@ -38,7 +73,6 @@ db.serialize(() => {
 app.get('/', (req, res) => {
     res.render('index');
 });
-
 // Route pour la page boutique
 app.get('/boutique', (req, res) => {
     // Tableau d'objets représentant les produits
@@ -128,23 +162,6 @@ app.get('/contact', (req, res) => {
     
     // Envoi des membres à la vue contact.ejs
     res.render('contact', { members: members });
-});
-
-// Route pour la page de connexion
-app.get('/login', (req, res) => {
-    res.render('login');
-});
-
-// Route pour traiter le formulaire de connexion
-app.post('/login', (req, res) => {
-    const { username, password } = req.body;
-    // Logique de traitement du formulaire de connexion
-    // Par exemple, vérifier les informations d'identification
-    if (username === 'admin' && password === 'password') {
-        res.send('Connexion réussie');
-    } else {
-        res.send('Nom d\'utilisateur ou mot de passe incorrect');
-    }
 });
 
 // Lancement du serveur
