@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 document.getElementById('myButton').addEventListener('click', function() {
     alert('Bouton cliqué!');
 });
@@ -17,3 +18,5 @@ function nextSlide() {
 }
 
 setInterval(nextSlide, 3000); // Change slide every 3 seconds
+=======
+>>>>>>> ugo

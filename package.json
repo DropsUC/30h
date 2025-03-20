@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "48h",
   "version": "1.0.0",
   "description": "",
@@ -18,6 +19,12 @@
   },
   "homepage": "https://github.com/DropsUC/30h#readme",
   "dependencies": {
+=======
+  "dependencies": {
+    "debug": "^4.4.0",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+>>>>>>> ugo
     "sqlite3": "^5.1.7"
   }
 }

@@ -1,0 +1,141 @@
+/* Style global */
+body {
+  font-family: "Mansalva", cursive;
+  background-color: #7d8d8b; /* Applique la couleur de fond */
+  background-size: 90%; /* Réduit la taille de l'image */
+  background-position: center; /* Centre l'image */
+  background-attachment: fixed; /* L'image reste fixe lors du scroll */
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Prend toute la hauteur de la page */
+  display: flex;
+  flex-direction: column;
+  color: rgb(10, 9, 9); /* Texte blanc pour plus de contraste */
+  min-height: 100vh; /* Garantir la hauteur de la fenêtre même avec du contenu plus court */
+}
+
+/* Appliquer Montelin aux titres */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montelin", sans-serif; /* Applique la police Montelin à tous les titres */
+}
+
+/* Suppression des puces des listes */
+ul {
+  list-style: none; /* Retire les puces */
+  padding: 0; /* Supprime les espaces internes */
+  margin: 0; /* Supprime les marges externes */
+}
+
+/* Bandeau de navigation */
+header {
+  background-color: #b9afd7; /* Fond avec couleur pastel */
+  color: white;
+  padding: 10px 20px; /* Ajout d'espace à gauche et à droite */
+  height: 140px; /* Hauteur réduite du bandeau */
+  text-align: center;
+  z-index: 1; /* Pour s'assurer que le header est au-dessus de l'image */
+  position: relative; /* Nécessaire pour les positionnements absolus */
+}
+
+header .logo-vert {
+  width: 12%; /* Ajuste la taille du logo vert */
+  position: absolute; /* Positionnement absolu */
+  left: 10px; /* Place le logo vert complètement à gauche */
+  top: 50%; /* Centre verticalement */
+  transform: translateY(-50%); /* Ajuste le centrage vertical */
+}
+
+header .logo-noir {
+  width: 12%; /* Ajuste la taille du logo noir */
+  position: absolute; /* Positionnement absolu */
+  right: 10px; /* Placer le logo noir à droite */
+  top: 50%; /* Centre verticalement */
+  transform: translateY(-50%); /* Ajuste le centrage vertical */
+}
+
+header nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+header nav ul li {
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+header nav ul li a:hover {
+  background-color: #7d8d8b; /* Fond du lien au survol */
+}
+
+/* Main content */
+main {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 50px; /* Ajoute de l'espace sous le contenu principal pour ne pas être caché par le footer */
+  background-color: #7d8d8b; /* Applique la couleur de fond spécifique ici */
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background-color: #efd9e6; /* Fond pastel clair */
+  color: white;
+  padding: 0.5px; /* Ajuste la hauteur du footer */
+  position: relative; /* Retirer la position fixed */
+  width: 100%;
+}
+
+/* Team Section */
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.team-member {
+  text-align: center;
+  width: 200px; /* Taille uniforme pour chaque bloc */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #f9f9f9;
+}
+
+.team-member-photo {
+  width: 150px; /* Taille réduite */
+  height: 150px; /* Taille réduite */
+  object-fit: cover; /* Pour éviter la déformation */
+  border-radius: 50%; /* Cercle pour un meilleur style */
+}
+
+/* Centered Images */
+.centered-images {
+  display: flex;
+  justify-content: center;
+  gap: 60px; /* Espace entre les images */
+  padding: 20px;
+}
+
+.centered-images img {
+  width: 650px; /* Ajustez cette valeur pour réduire la taille des images */
+  height: auto;
+  border-radius: 10px;
+  cursor: pointer; /* Indique que les images sont cliquables */
+}
+
