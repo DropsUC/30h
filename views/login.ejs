@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <!-- Bandeau avec les onglets -->
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/events">Événements</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/boutique">Boutique</a></li>
+          <li><a href="/login">login</a></li>
+        </ul>
+      </nav>
+      <h1>BDE Paris Ynov Campus</h1>
+      <img src="BDE-main_logo.png" alt="Logo BDE Vert" class="logo-vert" />
+      <img src="BDE-logo_noir.png" alt="Logo BDE Noir" class="logo-noir" />
+    </header>
+
+    <main>
+      <h1>Login</h1>
+      <form action="/login" method="post">
+        <label for="username">Nom d'utilisateur :</label>
+        <input type="text" id="username" name="username" required />
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" name="password" required />
+        <button type="submit">Se connecter</button>
+      </form>
+    </main>
+  </body>
+</html>

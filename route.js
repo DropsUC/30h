@@ -4,7 +4,7 @@ module.exports = function(app, db) {
         res.render('index');
     });
 
-    // Page de présentation
+    // Page about
     app.get('/about', (req, res) => {
         res.render('about');
     });
@@ -57,9 +57,22 @@ module.exports = function(app, db) {
     // Route de connexion (simulée ici pour simplification)
     app.post('/login', (req, res) => {
         const { email, password } = req.body;
-        // Ici, tu devrais vérifier les informations avec la base de données
-        req.session.user = { email: email, isAdmin: true }; // Juste un exemple
-        res.redirect('/');
+
+        // Vérification des informations dans la base de données
+        db.get('SELECT * FROM users WHERE email = ? AND password = ?', [email, password], (err, row) => {
+            if (err) {
+                console.error(err.message);
+                return res.status(500).send('Erreur serveur');
+            }
+
+            if (row) {
+                // L'utilisateur est trouvé, on crée une session
+                req.session.user = { email: row.email, isAdmin: row.isAdmin }; // Si tu as un champ 'isAdmin' dans ta table 'users'
+                return res.redirect('/');
+            } else {
+                return res.status(401).send('Identifiants incorrects');
+            }
+        });
     });
 
     // Route de déconnexion

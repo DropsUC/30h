@@ -35,7 +35,7 @@
             class="team-member-photo"
           />
           <h3><%= member.name %></h3>
-          <p><strong>Email :</strong> <%= member.email || '@mail' %></p>
+          <p><strong>Email :</strong> <%= member.email || 'Non renseigné' %></p>
           <p>
             <strong>Passion :</strong> <%= member.passion || 'Non renseignée' %>
           </p>
@@ -44,6 +44,7 @@
         <% }) %>
       </section>
     </main>
+
     <footer>
       <p>
         Suivez-nous sur Instagram :
